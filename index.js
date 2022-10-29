@@ -8,8 +8,7 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let cards = []
-//let playerName = "Gypsy"
-//let playerChips = 145
+
 let player = {
   name: "Gypsy",
   chips: 145
@@ -23,9 +22,9 @@ function getRandomCard(){
   
   if (randomCardNumber > 10){
     return 10
-  } else if (randomCardNumber === 1){
-    return 11
-  } else {
+  } else if (randomCardNumber === 1){ // this conditional statement returns the value 10 and 11 
+    return 11                         // which are a representation of Queen, King, and Jack in cards form
+  } else {                            // and Ace which can represent any number between 1, 10 and 11
     return randomCardNumber
   }
 }
@@ -40,7 +39,7 @@ function renderGame(){
     message = "You're out of the game"
     isAlive = false
 }
-cardsEl.textContent = "Cards: " //+ cards[0] + "-" + cards[1]
+cardsEl.textContent = "Cards: " 
 
 for (i = 0; i < cards.length;i++){
   cardsEl.textContent += cards[i] + " "
